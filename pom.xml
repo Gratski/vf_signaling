@@ -15,11 +15,17 @@
 	<description>This is the signaling server to be used by VF WebRTC Streaming Sessions</description>
 
 	<properties>
-		<java.version>1.8</java.version>
+		<java.version>9</java.version>
 		<kotlin.version>1.3.71</kotlin.version>
 	</properties>
 
+	<!-- https://mvnrepository.com/artifact/org.webjars/stomp-websocket -->
 	<dependencies>
+		<dependency>
+			<groupId>org.webjars</groupId>
+			<artifactId>stomp-websocket</artifactId>
+			<version>2.3.3</version>
+		</dependency>
 		<!-- https://mvnrepository.com/artifact/junit/junit -->
 		<dependency>
 			<groupId>junit</groupId>
@@ -27,7 +33,26 @@
 			<version>4.12</version>
 			<scope>test</scope>
 		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.java-websocket/Java-WebSocket -->
+		<dependency>
+			<groupId>org.java-websocket</groupId>
+			<artifactId>Java-WebSocket</artifactId>
+			<version>1.3.0</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/javax.websocket/javax.websocket-client-api -->
+		<dependency>
+			<groupId>javax.websocket</groupId>
+			<artifactId>javax.websocket-client-api</artifactId>
+			<version>1.1</version>
+		</dependency>
 
+
+
+
+		<dependency>
+			<groupId>com.google.code.gson</groupId>
+			<artifactId>gson</artifactId>
+		</dependency>
 		<dependency>
 			<groupId>org.webjars</groupId>
 			<artifactId>webjars-locator-core</artifactId>
