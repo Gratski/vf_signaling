@@ -16,8 +16,11 @@ class SocketHandler : TextWebSocketHandler() {
     @Throws(InterruptedException::class, IOException::class)
     public override fun handleTextMessage(session: WebSocketSession, message: TextMessage) {
         for (webSocketSession in sessions) {
-            val value = Gson().fromJson<Map<*, *>>(message.payload, MutableMap::class.java)
-            (webSocketSession as WebSocketSession).sendMessage(TextMessage("Hello " + value["name"] + " !"))
+            val cur: WebSocketSession = (webSocketSession as WebSocketSession);
+            if(cur.isOpen) {
+                val value = Gson().fromJson<Map<*, *>>(message.payload, MutableMap::class.java)
+                cur.sendMessage(TextMessage(""+value["name"]))
+            }
         }
     }
 
